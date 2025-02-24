@@ -1,20 +1,18 @@
 #import <UIKit/UIKit.h>
 
 
-@interface AWELeftSideBarEntranceView : NSObject
-@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@interface DUXBaseImageView : UIView
+// 类方法和属性声明
 @end
 
 
-%hook AWELeftSideBarEntranceView
-
+%hook DUXBaseImageView
 - (instancetype)initWithFrame:(CGRect)frame {
     self = %orig(frame);
     if (self) {
-        self.hidden = YES;
+        self.hidden = YES; // 隐藏视图
     }
     return self;
 }
-
 %end
 
